@@ -35,9 +35,7 @@ const {data: product, isLoading} =useFetchProductDetailsQuery(id ? +id:0);
                 <TableCell sx={{fontWeight:'bold'}}>{detail.Label}</TableCell>
                 <TableCell >{detail.value}</TableCell>
                </TableRow>
-
            ))}
-
           </TableBody>
           </Table>
         </TableContainer>

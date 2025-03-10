@@ -1,9 +1,8 @@
 import { AppBar, Badge, Box, IconButton, LinearProgress, List, ListItem, Toolbar, Typography } from "@mui/material";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
-import { ShoppingCart, Title } from "@mui/icons-material";
+import { ShoppingCart } from "@mui/icons-material";
 import { NavLink } from "react-router-dom";
-import { grey } from "@mui/material/colors";
 import { useAppSelector } from "../store/store";
 
 type Props = {
@@ -72,7 +71,9 @@ export default function NavBar({toggleDarkMode, mode}:Props) {const {isLoading} 
           </Box>
         </Toolbar>
         {isLoading && (
-          <Box sx={{width:'100%'}}><LinearProgress color="secondary"/></Box>
+          <Box sx={{width:'100%'}}> <LinearProgress color="secondary" />
+          <LinearProgress color="success" />
+          <LinearProgress color="inherit" /></Box>
         )}
     </AppBar>
   )
