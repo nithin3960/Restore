@@ -23,7 +23,7 @@ app.UseMiddleware<ExceptionMiddleware>();
 // Enable the CORS middleware using the defined policy
 app.UseCors(opt =>
 {
- opt.WithOrigins("https://localhost:3000").AllowAnyHeader().AllowAnyMethod();
+ opt.AllowAnyHeader().AllowAnyMethod().AllowCredentials().WithOrigins("https://localhost:3000");
 });
 
 app.MapControllers();
