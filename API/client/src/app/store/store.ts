@@ -4,7 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { catalogApi } from "../../features/catalog/catalogApi";
 import { uiSlice } from "../layout/uiSlice";
 import { errorApi } from "../../features/about/errorApi";
-import { basketApi } from "../../features/basket/BasketApi";
+import { catalogSlice } from "../../features/catalog/CatalogSlice";
+import { basketApi } from "../../features/basket/basketApi";
 
 export function configureThestore(){
     return legacy_createStore(counterReducer)
@@ -17,6 +18,7 @@ export const store = configureStore({
         [basketApi.reducerPath]:basketApi.reducer,
         counter: counterSlice.reducer,
         ui: uiSlice.reducer,
+        catalog: catalogSlice.reducer
     },
     middleware: (getDefaultMiddleware)=>
         getDefaultMiddleware().concat(catalogApi.middleware, errorApi.middleware, basketApi.middleware)

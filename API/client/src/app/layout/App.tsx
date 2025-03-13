@@ -1,7 +1,7 @@
 import {useMemo, useState } from "react";
 import {Container, createTheme, CssBaseline, ThemeProvider} from "@mui/material";
 import NavBar from "./NavBar";
-import { Outlet } from "react-router-dom";
+import { Outlet, ScrollRestoration } from "react-router-dom";
 
 function App() {
 
@@ -16,6 +16,7 @@ const toggleDarkMode = () => setMode((prev) => (prev === "dark" ? "light" : "dar
   return (
     <>
      <ThemeProvider  theme={theme}>
+      <ScrollRestoration/>
      <CssBaseline />
     <NavBar toggleDarkMode={toggleDarkMode} mode={mode}/>
      <Container maxWidth= 'xl' sx={{mt:16}}>
