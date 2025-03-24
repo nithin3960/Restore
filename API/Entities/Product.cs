@@ -17,4 +17,6 @@ public class Product
 
     public int QuantityInStock { get; set; }
 
+   public int QuantityInStockTest { get; set; }
+
 }
